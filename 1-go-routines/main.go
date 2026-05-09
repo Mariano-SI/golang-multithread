@@ -39,6 +39,11 @@ func main() {
 	//thread 3
 	go task("B")
 
+	//thread 4
+	go func() {
+		task("C")
+	}()
+
 	fmt.Println("As goroutines são iniciadas e podem rodar concorrentemente/parallelamente")
 
 	// Sem esse sleep, a função main terminaria e o programa encerraria antes
