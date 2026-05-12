@@ -7,10 +7,10 @@ func publisher(name string, ch chan<- string) { //assinatura de canal que so rec
 }
 
 func reader(ch <-chan string) { // assinatura de canal que entrega dados
-	fmt.Println(<- ch)
+	fmt.Println(<-ch)
 }
 
-// thread 1
+// goroutine 1
 func main() {
 	myChannel := make(chan string)
 

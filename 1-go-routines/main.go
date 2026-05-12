@@ -12,7 +12,7 @@ func task(name string) {
 	}
 }
 
-// Thread 1
+// goroutine 1
 func main() {
 	//Sem routines = execucao sequencial
 	initialTimeWithoutRoutines := time.Now()
@@ -34,12 +34,12 @@ func main() {
 	// No entanto, o modelo de goroutines em Go é fundamentalmente concorrente;
 	// o paralelismo depende do agendamento e da disponibilidade de múltiplos CPUs.
 
-	//thread 2
+	//goroutine 2
 	go task("A")
-	//thread 3
+	//goroutine 3
 	go task("B")
 
-	//thread 4
+	//goroutine 4
 	go func() {
 		task("C")
 	}()

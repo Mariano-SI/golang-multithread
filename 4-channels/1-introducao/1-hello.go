@@ -7,19 +7,19 @@ package main
 
 import "fmt"
 
-//thread 1
+//goroutine 1
 func main() {
 	myChannel := make(chan string)
 
-	//thread 2
+	//goroutine 2
 	go func() {
 		myChannel <- "Olá, Mundo" // adicionou essa string ao canal = canal cheio
 	}()
 
-	//thread 1
+	//goroutine 1
 
 	msg := <-myChannel // canal esvaziou
 	fmt.Println(msg)
 
-	// resumo: passamos um valor da thread 2 pra thread 1
+	// resumo: passamos um valor da goroutine 2 pra goroutine 1
 }
