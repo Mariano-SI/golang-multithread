@@ -20,7 +20,7 @@ func main() {
 	// hey -n 10000 -c 50 http://localhost:3000
 	//
 	// Em nossos testes, após as 10.000 requisições, o contador 'number' ficou em 9.365
-	// em vez de 10.000. Isso aconteceu porque múltiplas goroutines acessaram e
+	// em vez de 10.000, mesm om todos os status code retornados sendo 200, o que indicavam um sucesso. Isso aconteceu porque múltiplas goroutines acessaram e
 	// incrementaram a variável ao mesmo tempo, causando perda de incrementos devido
 	// à race condition.
 	//

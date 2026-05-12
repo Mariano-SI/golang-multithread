@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"sync"
+	"time"
 )
 
 func main() {
@@ -26,6 +27,7 @@ func main() {
 
 func consumer(ch chan int) {
 	for x := range ch {
+		time.Sleep(time .Second)
 		fmt.Printf("Received %d\n", x)
 	}
 	fmt.Println("Channel fechado, consumer terminado")

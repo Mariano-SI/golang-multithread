@@ -33,6 +33,7 @@ func main() {
 	// Comando: hey -n 20000 -c 100 http://localhost:3000
 	// Resultado esperado: Contador chega exatamente a 20.000 (sem race condition).
 	// Em testes com 500k reqs e 1000 conexões simultâneas, ~499k foram processadas
+	// e o restante que nao foi processado nao causou problemas de race contition, o servidor apenas nao aguentou e retornou status 1xx
 	// corretamente, provando que o mutex funciona mesmo sob sobrecarga.
 	http.ListenAndServe(":3000", nil)
 }
